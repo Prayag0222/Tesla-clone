@@ -4,11 +4,11 @@ import Teslalogo from "/src/assets/Tesla_logo.png";
 import { CircleQuestionMark } from "lucide-react";
 import { Globe } from "lucide-react";
 import { CircleUser } from "lucide-react";
-import Vehiclesmenu from "./Vehiclesmenu";
-import Energymenu from "./Energymenu";
-import Chargingmenu from "./Chargingmenu";
-import Discovermenu from "./Discovermenu";
-import Shopmenu from "./shopmenu";
+import Vehiclesmenu from "./navmenus/Vehiclesmenu";
+import Energymenu from "./navmenus/Energymenu";
+import Chargingmenu from "./navmenus/Chargingmenu";
+import Discovermenu from "./navmenus/Discovermenu";
+import Shopmenu from "./navmenus/Shopmenu";
 
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState(null);
