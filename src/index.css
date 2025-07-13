@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+@font-face {
+    font-family: Tesla1;
+    src: url('./assets/fonts/tesla1.woff2') format('woff2');
+}
+
+.font-tesla1{
+    font-family: 'Tesla1',sans-serif;
+}
