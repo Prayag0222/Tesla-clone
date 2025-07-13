@@ -1,4 +1,5 @@
 
+import React, { useState, useRef } from "react";
 import Teslalogo from "/src/assets/Tesla_logo.png";
 import { CircleQuestionMark } from "lucide-react";
 import { Globe } from "lucide-react";
@@ -10,7 +11,20 @@ import Discovermenu from "./Discovermenu";
 import Shopmenu from "./shopmenu";
 
 const Navbar = () => {
+  const [activeMenu, setActiveMenu] = useState(null);
+  const timeoutRef = useRef(null);
 
+  // Only one submenu open at a time
+  const handleMenuEnter = (menuName) => {
+    clearTimeout(timeoutRef.current);
+    setActiveMenu((prev) => (prev === menuName ? prev : menuName));
+  };
+
+  const handleMenuLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setActiveMenu(null);
+    }, 300);
+  };
 
   return (
     <div>
@@ -27,13 +41,49 @@ const Navbar = () => {
             ></path>
           </svg>
 
-          <div >
-            <ul className="hidden md:flex gap-6 text-[15px]   pr-20 font-medium text-black">
-              <Vehiclesmenu />
-              <Energymenu />
-              <Chargingmenu />
-              <Discovermenu />
-              <Shopmenu />
+          <div>
+            <ul className="hidden md:flex gap-6 text-[15px] pr-20 font-medium text-black">
+              {/* Vehicles */}
+              <div
+                onMouseEnter={() => handleMenuEnter("vehicles")}
+                onMouseLeave={handleMenuLeave}
+                // Removed position: relative to allow submenu to cover the whole screen
+                style={{ zIndex: activeMenu === "vehicles" ? 30 : 1 }}
+              >
+                <Vehiclesmenu open={activeMenu === "vehicles"} />
+              </div>
+              {/* Energy */}
+              <div
+                onMouseEnter={() => handleMenuEnter("energy")}
+                onMouseLeave={handleMenuLeave}
+                style={{ zIndex: activeMenu === "energy" ? 30 : 1 }}
+              >
+                <Energymenu open={activeMenu === "energy"} />
+              </div>
+              {/* Charging */}
+              <div
+                onMouseEnter={() => handleMenuEnter("charging")}
+                onMouseLeave={handleMenuLeave}
+                style={{ zIndex: activeMenu === "charging" ? 30 : 1 }}
+              >
+                <Chargingmenu open={activeMenu === "charging"} />
+              </div>
+              {/* Discover */}
+              <div
+                onMouseEnter={() => handleMenuEnter("discover")}
+                onMouseLeave={handleMenuLeave}
+                style={{ zIndex: activeMenu === "discover" ? 30 : 1 }}
+              >
+                <Discovermenu open={activeMenu === "discover"} />
+              </div>
+              {/* Shop */}
+              <div
+                onMouseEnter={() => handleMenuEnter("shop")}
+                onMouseLeave={handleMenuLeave}
+                style={{ zIndex: activeMenu === "shop" ? 30 : 1 }}
+              >
+                <Shopmenu open={activeMenu === "shop"} />
+              </div>
             </ul>
           </div>
           <div className="flex justify-around items-center h-1 gap-3 pr-10">

@@ -67,7 +67,7 @@ const Shopmenu = () => {
       <div className="">
         <div
           className={`
-            absolute left-0 right-0 z-50 w-screen min-h-115
+            absolute left-0 right-0 z-50 w-screen 
             px-40 pt-8 pb-6 flex-wrap bg-white shadow-lg mt-2 rounded-md flex justify-center gap-8
             transition-all duration-300 ease-in-out
             ${dropdown ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-4 pointer-events-none'}
