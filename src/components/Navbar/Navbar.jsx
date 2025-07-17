@@ -27,7 +27,7 @@ const Navbar = () => {
   };
 
   return (
-    <div>
+    <div className="fixed top-0 left-0 w-full z-50 bg-white bg-opacity-80 backdrop-blur-md">
       <nav>
         <div className="navbar-container bg-white h-15 rounded-2xl flex justify-between items-center p-3">
           <svg
