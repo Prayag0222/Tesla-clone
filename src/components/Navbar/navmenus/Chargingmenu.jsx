@@ -72,7 +72,7 @@ const Chargingmenu = () => {
               className={`
                 px-6 py-4 cursor-pointer flex flex-col items-center rounded-md
                 transition-all duration-100
-                hover:bg-gray-100 hover:scale-105
+             
                 ${open ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}
               `}
               style={{
@@ -88,8 +88,34 @@ const Chargingmenu = () => {
               <span className="block text-center font-tesla1 font-medium text-black mt-2 transition-colors duration-200">
                 {item.name}
               </span>
+              <ul className='flex underline-2 gap-4 '>
+                <li>
+                  <a className='hover:text-gray-700 text-gray-500 underline font-medium' href="#">{item.learn || "Learn"}</a>
+                </li>
+                <li>
+                  <a className='hover:text-gray-700 text-gray-500 underline font-medium' href="#">{item.order || "Order"}</a>
+                </li>
+              </ul>
             </li>
           ))}
+          <div className="w-[2px] bg-gray-400 mr-2" style={{ minHeight: '200px', alignSelf: 'stretch' }} />
+          <ul className=' flex flex-col gap-5'>
+            <li>
+              <a href="#" className="text-gray-700 transition-all duration-200 underline-offset-4 hover:underline">Help Me Charge</a>
+            </li>
+            <li>
+              <a href="#" className="text-gray-700 transition-all duration-200 underline-offset-4 hover:underline">Charging Calculator</a>
+            </li>
+            <li>
+              <a href="#" className="text-gray-700 transition-all duration-200 underline-offset-4 hover:underline">Charging With NACS</a>
+            </li>
+            <li>
+              <a href="#" className="text-gray-700 transition-all duration-200 underline-offset-4 hover:underline">Supercharger Voting</a>
+            </li>
+            <li>
+              <a href="#" className="text-gray-700 transition-all duration-200 underline-offset-4 hover:underline">Host a Supercharger</a>
+            </li>
+          </ul>
         </div>
       </div>
     </li>
