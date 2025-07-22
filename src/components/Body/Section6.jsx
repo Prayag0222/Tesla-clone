@@ -12,13 +12,13 @@ const Section6 = () => {
         <div >
             <ul className='flex gap-10 text-xs justify-center mt-10 font-medium text-gray-500 mb-10'>
                 <li>Tesla @ 2005</li>
-                <li>Privacy & legal</li>
-                <li>Vehicle Recalls</li>
-                <li>Contact</li>
-                <li>News</li>
-                <li>Get Updates</li>
-                <li>Location</li>
-                <li>Learn</li>
+                <li><a href="https://www.tesla.com/legal" target="_blank" rel="noopener noreferrer">Privacy & legal</a></li>
+                <li><a href="https://www.tesla.com/recalls" target="_blank" rel="noopener noreferrer">Vehicle Recalls</a></li>
+                <li><a href="https://www.tesla.com/contact" target="_blank" rel="noopener noreferrer">Contact</a></li>
+                <li><a href="https://www.tesla.com/blog" target="_blank" rel="noopener noreferrer">News</a></li>
+                <li><a href="https://www.tesla.com/updates" target="_blank" rel="noopener noreferrer">Get Updates</a></li>
+                <li><a href="https://www.tesla.com/findus" target="_blank" rel="noopener noreferrer">Location</a></li>
+                <li><a href="https://www.tesla.com/support" target="_blank" rel="noopener noreferrer">Learn</a></li>
             </ul>
         </div>
 

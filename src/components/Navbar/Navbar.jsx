@@ -9,8 +9,11 @@ import Energymenu from "./navmenus/Energymenu";
 import Chargingmenu from "./navmenus/Chargingmenu";
 import Discovermenu from "./navmenus/Discovermenu";
 import Shopmenu from "./navmenus/Shopmenu";
+import { Link } from "react-router-dom"; // <-- Add this import
 
-const Navbar = () => {
+
+
+const Navbar = ({ transparent }) => {
   const [activeMenu, setActiveMenu] = useState(null);
   const timeoutRef = useRef(null);
 
@@ -27,9 +30,9 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full z-50 bg-white bg-opacity-80 backdrop-blur-md">
+    <div className={`fixed top-0 left-0 w-full z-50 ${transparent ? 'bg-transparent' : 'bg-white bg-opacity-80 backdrop-blur-md'}`}>
       <nav>
-        <div className="navbar-container bg-white h-15 rounded-2xl flex justify-between items-center p-3">
+        <div className={`navbar-container ${transparent ? 'bg-transparent' : 'bg-white'} h-15 rounded-2xl flex justify-between items-center p-3`}>
           <svg
             className="tds-icon tds-icon-logo-wordmark tds-site-logo-icon h-3 pl-10"
             viewBox="0 0 342 35"
@@ -87,9 +90,13 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="flex justify-around items-center h-1 gap-3 pr-10">
-            <CircleQuestionMark />
+            <Link to="/support">
+              <CircleQuestionMark />
+            </Link>
             <Globe />
-            <CircleUser />
+            <Link to="/account">
+              <CircleUser />
+            </Link>
           </div>
         </div>
       </nav>

@@ -61,6 +61,34 @@ export default function Slides() {
     setActiveIndex(idx);
   };
 
+  const handleButtonClick = (model, type) => {
+    if (type === 'Order Now') {
+      if (model === 'Solar Panel') {
+        window.open('https://www.tesla.com/solarpanels', '_blank');
+      } else if (model === 'Powerwall') {
+        window.open('https://www.tesla.com/powerwall', '_blank');
+      } else if (model === 'Solar Roof') {
+        window.open('https://www.tesla.com/solarroof', '_blank');
+      } else if (model === 'Megapack') {
+        window.open('https://www.tesla.com/megapack', '_blank');
+      } else {
+        alert('Order page not found');
+      }
+    } else if (type === 'Learn more') {
+      if (model === 'Solar Panel') {
+        window.open('https://www.tesla.com/solarpanels', '_blank');
+      } else if (model === 'Powerwall') {
+        window.open('https://www.tesla.com/powerwall', '_blank');
+      } else if (model === 'Solar Roof') {
+        window.open('https://www.tesla.com/solarroof', '_blank');
+      } else if (model === 'Megapack') {
+        window.open('https://www.tesla.com/megapack', '_blank');
+      } else {
+        alert('Learn more page not found');
+      }
+    }
+  };
+
   return (
     <div className="w-full flex justify-center items-center">
       {/* Buttons */}
@@ -133,8 +161,8 @@ export default function Slides() {
                     <h1 className="   text-white font-bold lg:text-6xl md:text-4xl sm:text-2xl">{card.model}</h1>
                     <span className="absolute text-white flex lg:text-2xl mt-5 md:text-xl sm:text-sm ">{card.lease}</span>
                     <div className=" absolute flex gap-3 bottom-2 max-h-8   lg:w-80 md:w-60 sm:w-40 mt-20">
-                      <button className="text-white bg-blue-400 lg:text-md sm:text-sm w-full lg:font-medium md:font-medium sm:font-bold py-1 rounded cursor-pointer ">Order Now</button>
-                      <button className="text-black bg-white lg:text-md sm:text-sm lg:font-medium md:font-medium sm:font-bold  w-full py-1 rounded cursor-pointer  ">Learn more</button>
+                      <button className="text-white bg-blue-400 lg:text-md sm:text-sm w-full lg:font-medium md:font-medium sm:font-bold py-1 rounded cursor-pointer " onClick={() => handleButtonClick(card.model, 'Order Now')}>Order Now</button>
+                      <button className="text-black bg-white lg:text-md sm:text-sm lg:font-medium md:font-medium sm:font-bold  w-full py-1 rounded cursor-pointer  " onClick={() => handleButtonClick(card.model, 'Learn more')}>Learn more</button>
                     </div>
                   
                   </div>

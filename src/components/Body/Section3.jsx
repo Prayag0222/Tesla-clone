@@ -22,6 +22,15 @@ const cards = [
 
 ]
 
+const handleButtonClick = (type) => {
+  if (type === 'Verify Now') {
+    window.open('https://www.tesla.com/support/american-heroes', '_blank');
+  } else if (type === 'Learn more') {
+    window.open('https://www.tesla.com/AI', '_blank');
+  } else {
+    alert('Action not implemented');
+  }
+};
 
   return (
     <div>
@@ -36,7 +45,7 @@ const cards = [
                     <div className='flex flex-col p-8 gap-4 '>
                         <h1 className='text-4xl font-medium'>{card.Title}</h1>
                         <span className='font-medium text-xl text-gray-500'>{card.span}</span>
-                        <button className='bg-white text-black text-xl w-65 rounded p-2 cursor-pointer'>{card.button}</button>
+                        <button className='bg-white text-black text-xl w-65 rounded p-2 cursor-pointer' onClick={() => handleButtonClick(card.button)}>{card.button}</button>
                     </div>
                         <img className="h-60 w-65 object-cover overflow-hidden rounded-xl" src= {card.src} alt="" />
                     </div>

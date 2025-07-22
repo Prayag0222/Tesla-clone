@@ -1,6 +1,18 @@
 import React from 'react';
 
 const Section4 = () => {
+  const handleButtonClick = (type) => {
+    if (type === 'Demo Drive') {
+      window.open('https://www.tesla.com/drive', '_blank');
+    } else if (type === 'Learn More') {
+      window.open('https://www.tesla.com/support/full-self-driving', '_blank');
+    } else if (type === 'Watch Now') {
+      window.open('https://www.youtube.com/watch?v=Ucp0TTmvqOE', '_blank');
+    } else {
+      alert('Action not implemented');
+    }
+  };
+
   return (
     <div className="w-full px-12 py-8">
       <div className="flex flex-col lg:flex-row gap-7">
@@ -20,10 +32,10 @@ const Section4 = () => {
               Full Self-Driving (Supervised)
             </h1>
             <div className="flex flex-wrap gap-4">
-              <button className="w-48 h-12 bg-sky-600 rounded-lg text-white font-medium hover:bg-sky-700 transition-colors cursor-pointer">
+              <button className="w-48 h-12 bg-sky-600 rounded-lg text-white font-medium hover:bg-sky-700 transition-colors cursor-pointer" onClick={() => handleButtonClick('Demo Drive')}>
                 Demo Drive
               </button>
-              <button className="w-48 h-12 bg-white rounded-lg text-black font-medium border border-gray-300 hover:bg-gray-100 transition-colors cursor-pointer">
+              <button className="w-48 h-12 bg-white rounded-lg text-black font-medium border border-gray-300 hover:bg-gray-100 transition-colors cursor-pointer" onClick={() => handleButtonClick('Learn More')}>
                 Learn More
               </button>
             </div>
@@ -41,7 +53,7 @@ const Section4 = () => {
             <h1 className="text-white text-3xl lg:text-4xl font-semibold mb-4">
               World's First Autonomous Car Delivery
             </h1>
-            <button className="w-48 h-12 bg-sky-600 rounded-lg text-white font-medium hover:bg-sky-700 transition-colors cursor-pointer">
+            <button className="w-48 h-12 bg-sky-600 rounded-lg text-white font-medium hover:bg-sky-700 transition-colors cursor-pointer" onClick={() => handleButtonClick('Watch Now')}>
               Watch Now
             </button>
           </div>
